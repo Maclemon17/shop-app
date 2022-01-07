@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\authentication\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class AdminDashboardController extends Controller
 {
     public function dashboard() {
-        return view('admin.admin-dashboard')->layout('layouts.main');
+        return view('authentication.admin.admin-dashboard');
     }
 }

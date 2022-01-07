@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\admin\AdminDashboardController;
-use App\Http\Controllers\user\UserDashboardController;
+use App\Http\Controllers\authentication\admin\AdminDashboardController;
+use App\Http\Controllers\authentication\user\UserDashboardController;
 
 
 /*

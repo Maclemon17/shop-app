@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\authentication\user;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class UserDashboardController extends Controller
 {
     public function dashboard() {
-        return view('user.user-dashboard')->layout('layouts.main');
+        return view('authentication.user.user-dashboard');
     }
 }
