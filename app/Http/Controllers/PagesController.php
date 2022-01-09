@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class PagesController extends Controller
 {
@@ -15,7 +16,8 @@ class PagesController extends Controller
    }
 
    public function shop() {
-      return view('pages.shop');
+      $products = Product::paginate(12);
+      return view('pages.shop', compact('products'));
    }
 
    public function cart() {

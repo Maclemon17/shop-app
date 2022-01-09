@@ -63,6 +63,12 @@
 
 @section("title", 'Register|Create New User')
 
+<style>
+	.text-req {
+		color: red;
+	}
+</style>
+
 @section('bodyClass', 'home-page home-01')
 
 @section('content')
@@ -83,7 +89,7 @@
 						<div class="wrap-login-item ">
 							<div class="register-form form-item ">
                                 <x-jet-validation-errors class="mb-4 alert alert-danger" />
-
+								<p>Fields marked with <span class="text-req">*</span> are required</p>
 								<form class="form-stl" action="{{ route('register') }}" name="frm-login" method="POST" >
                                     @csrf
 									<fieldset class="wrap-title">
@@ -91,22 +97,22 @@
 										<h4 class="form-subtitle">Personal infomation</h4>
 									</fieldset>									
 									<fieldset class="wrap-input">
-										<label for="frm-reg-lname">Name*</label>
-										<input type="text" id="frm-reg-lname" name="name" placeholder="Your name*" required autofocus autocomplete="name" :value="old('name')">
+										<label for="frm-reg-lname">Name<span class="text-req">*</span></label>
+										<input type="text" id="frm-reg-lname" name="name" placeholder="Your name" required autofocus autocomplete="name" :value="old('name')">
 									</fieldset>
 									<fieldset class="wrap-input">
-										<label for="frm-reg-email">Email Address*</label>
+										<label for="frm-reg-email">Email Address<span class="text-req">*</span></label>
 										<input type="email" id="frm-reg-email" name="email" placeholder="Email address" :value="old('email')" required>
 									</fieldset>
 									<fieldset class="wrap-title">
 										<h3 class="form-title">Login Information</h3>
 									</fieldset>
 									<fieldset class="wrap-input item-width-in-half left-item ">
-										<label for="frm-reg-pass">Password *</label>
+										<label for="frm-reg-pass">Password<span class="text-req">*</span></label>
 										<input type="password" id="frm-reg-pass" name="password" placeholder="Password" required autocomplete="new-password">
 									</fieldset>
 									<fieldset class="wrap-input item-width-in-half ">
-										<label for="frm-reg-cfpass">Confirm Password *</label>
+										<label for="frm-reg-cfpass">Confirm Password <span class="text-req">*</span></label>
 										<input type="password" id="frm-reg-cfpass" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
 									</fieldset>
 									<input type="submit" class="btn btn-sign" value="Register" name="register">
