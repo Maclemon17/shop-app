@@ -25,6 +25,7 @@ use App\Http\Controllers\authentication\user\UserDashboardController;
 Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::get('about-us', [PagesController::class, 'aboutUs'])->name('about');
 Route::get('shop', [PagesController::class, 'shop'])->name('shop');
+Route::get('product/{slug}', [PagesController::class, 'productDetails'])->name('details');
 Route::get('cart', [PagesController::class, 'cart'])->name('cart');
 Route::get('contact-us', [PagesController::class, 'contactUs'])->name('contact');
 Route::get('checkout', [PagesController::class, 'checkOut'])->name('checkout');

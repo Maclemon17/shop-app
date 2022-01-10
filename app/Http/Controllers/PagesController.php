@@ -20,6 +20,13 @@ class PagesController extends Controller
       return view('pages.shop', compact('products'));
    }
 
+   public function productDetails($slug) {
+      $product = Product::where('slug', '=', $slug)->first();
+      $popular_products = Product::inRandomOrder()->limit(4)->get();
+      $related_products = Product::where('category_id', $product->category_id)->inRandomOrder()->limit(5)->get();
+      return view('pages.details', compact('product', 'popular_products', 'related_products'));
+   }
+
    public function cart() {
       return view('pages.cart');
    }
